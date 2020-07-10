@@ -37,4 +37,4 @@ class IdDynamo(Resource):
     @accepts(schema=DynamoSchema, api=api)
     def put(self, id: str):
         """Put atributtes to logs Dynamo"""
-        return DynamoService.put_log(id, request.parsed_Obj)
+        return DynamoService.put_log(id, request)

@@ -43,9 +43,17 @@ class DynamoService():
         return jsonify(item)
 
     @staticmethod
-    def put_log(request):
-        newInfo = request.json['newInfo']
-        Obs = request.json['Obs']
+    def put_log(id, request):
+        awsRegion = request.json['awsRegion']
+        eventID = request.json['eventID']
+        eventName = request.json['eventName']
+        eventSource = request.json['eventSource']
+        eventType = request.json['eventType']
+        eventVersion = request.json['eventVersion']
+        recipientAccountId = request.json['recipientAccountId']
+        requestID = request.json['requestID']
+        sourceIPAddress = request.json['sourceIPAddress']
+        userAgent = request.json['userAgent']
         resp = dynamo_client.get_item(
             TableName=table,
             Key={
@@ -60,10 +68,25 @@ class DynamoService():
             Key={
                 'ID': {'S': id}
             },
-            UpdateExpression='SET newInfo = :newInfo, Obs = :Obs',
+            UpdateExpression='SET awsRegion = :awsRegion, eventID = :eventID, '
+                             'eventName = :eventName, eventSource = '
+                             ':eventSource, eventType = :eventType, '
+                             'eventVersion = :eventVersion, '
+                             'recipientAccountId = :recipientAccountId, '
+                             'requestID = :requestID, sourceIPAddress = '
+                             ':sourceIPAddress, userAgent = :userAgent',
             ExpressionAttributeValues={
-                ':newInfo': {'S': newInfo},
-                ':Obs': {'S': Obs}
+                ':awsRegion': {'S': awsRegion},
+                ':eventID': {'S': eventID},
+                ':eventName': {'S': eventName},
+                ':eventSource': {'S': eventSource},
+                ':eventType': {'S': eventType},
+                ':eventVersion': {'S': eventVersion},
+                ':recipientAccountId': {'S': recipientAccountId},
+                ':requestID': {'S': requestID},
+                ':sourceIPAddress': {'S': sourceIPAddress},
+                ':userAgent': {'S': userAgent}
+
             },
             ReturnValues="UPDATED_NEW"
         )
