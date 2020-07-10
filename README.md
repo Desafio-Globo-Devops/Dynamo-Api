@@ -7,7 +7,7 @@ Api Rest feita para acessar os Logs do DynamoDB feito no Projeto Serveless.
 - Respectivamente com o nome da Table no qual foi o setado no projeto anterior:```'Event_Capture'```, sua Region, Acess key e Secret key da AWS Account.
 
 ### Executando a aplicação:
-A aplicação é executada em container, então basta digitar no terminal: ```make build``` bara construir a image do docker e ```make run``` rodar o container. O mesmo subirá com o nome ***dynamo-api***.
+A aplicação é executada em container, então basta digitar no terminal: ```make build``` bara construir a image do docker e ```make run``` para rodar o container. O mesmo subirá com o nome ***dynamo-api***.
 A aplicação foi feita em Flask com documentação, interface swagger e está exposta pelo ```localhost:8100```.
 
 ### Endpoints
