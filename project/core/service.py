@@ -36,11 +36,10 @@ class DynamoService():
             }
         )
         item = resp.get('Item')
-        if not item:
-            return jsonify({'error': 'Log does not exist'}), 404
-
-        print(item)
-        return jsonify(item)
+        if item:
+            return jsonify(item)
+        else:
+            return jsonify({'error': 'Log does not exist'})
 
     @staticmethod
     def put_log(id, request):
@@ -62,7 +61,7 @@ class DynamoService():
         )
         item = resp.get('Item')
         if not item:
-            return jsonify({'error': 'Log does not exist'}), 404
+            return jsonify({'error': 'Log does not exist'})
         response = dynamo_client.update_item(
             TableName=table,
             Key={
@@ -102,7 +101,7 @@ class DynamoService():
         )
         item = resp.get('Item')
         if not item:
-            return jsonify({'error': 'Log does not exist'}), 404
+            return jsonify({'error': 'Log does not exist'})
         response = dynamo_client.delete_item(
             TableName=table,
             Key={
