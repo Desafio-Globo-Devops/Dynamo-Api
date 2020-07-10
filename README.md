@@ -19,7 +19,6 @@ A aplicação foi feita em Flask com documentação, interface swagger e está e
 - ```PUT /api/logs/{id}```:  endpoint para alterar os campos disponíveis{id}.
 
 - ```DELETE /api/logs/{id}```:  endpoint para obter deletar os campos disponíveis{id}.
-```
 
 ### Ferramentas
 
