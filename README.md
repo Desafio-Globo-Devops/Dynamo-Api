@@ -26,4 +26,5 @@ A aplicação foi feita em Flask com documentação, interface swagger e está e
  - Interface e Documentação: **Swagger 2.0**
  - Biblioteca: **Flask & DynamoDB**
  - Container: **Docker**
+
 autor: **Daniel Nicácio**
