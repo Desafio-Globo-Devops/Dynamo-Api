@@ -1,5 +1,5 @@
 # Dynamo-Api
-Api Rest feita para acessar os Logs do DynamoDB feito no Projeto Serveless. 
+Api Rest feita para acessar os Logs do DynamoDB feito no Projeto **Serveless-Aws-Terraforms**. 
 
 ## Requisitos para rodar a aplicação:
 
